@@ -1,6 +1,6 @@
 # Interactive API Application
 
-This project consists of a backend API built with FastAPI and a frontend developed using React. The backend API handles authentication, rate-limiting, and resource access, while the frontend allows users to interact with the API. The application is containerized using Docker for easy deployment.
+This project consists of a backend API built with FastAPI. The backend API handles authentication, rate-limiting, and resource access, while the frontend allows users to interact with the API. The application is containerized using Docker for easy deployment.
 
 ## Features
 
@@ -14,7 +14,6 @@ Make sure you have the following tools installed:
 
 - Docker and Docker Compose
 - Python 3.7+ (for backend development)
-- Node.js and npm (for frontend development)
 
 ## How to Run
 
@@ -42,19 +41,8 @@ Run docker-compose up --build to build and start the backend container:
 
 The backend will be available at http://localhost:8000 (by default). The API will be exposed and ready for interaction.
 
-### 3. For the frontend:
 
-The frontend is built using React and is also containerized with Docker.
-Frontend Setup with Docker:
-Navigate to the frontend directory:
-
-      cd frontend
-Run docker-compose up --build to build and start the frontend container:
-
-      docker-compose up --build
-The frontend will be available at http://localhost:3000 (by default). You can interact with the backend API through the frontend interface.
-
-### 4. Usage
+### 3. Usage
 Login for Access Token: Send a POST request to /token with a valid username to receive a JWT access token.
 
 Access Protected Resources: Use the JWT token to make GET requests to /api/resource/v1 or /api/resource/v2, depending on the API version. The response will be rate-limited based on your IP address.
@@ -95,7 +83,6 @@ Response:
 Technologies Used
 
  --FastAPI (Backend): Python web framework for building APIs with automatic documentation, high performance, and ease of use.
- --React (Frontend): A JavaScript library for building user interfaces.
  --Docker (Containerization): For packaging the application into containers that can be run anywhere.
  --Redis (For caching and rate-limiting): In-memory data structure store used to manage rate-limiting information.
  --JWT (Authentication): JSON Web Tokens for securely transmitting information between frontend and backend.

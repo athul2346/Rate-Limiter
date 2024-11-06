@@ -22,7 +22,7 @@ app.add_middleware(
 )
 
 # Connect to Redis (using Redis hostname since we'll use Docker Compose)
-redis_client = redis.StrictRedis(host='redis', port=6379, db=0, decode_responses=True)
+redis_client = redis.StrictRedis(host=os.getenv('redis_host'), port=6379, db=0, decode_responses=True)
 
 SECRET_KEY = os.getenv("Token")
 ALGORITHM = "HS256"
